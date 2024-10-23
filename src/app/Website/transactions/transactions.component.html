@@ -1,0 +1,40 @@
+    <div class="container my-3">
+        <h1>Accounting Dashboard</h1>
+        
+        <form id="transactionForm">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" class="form-control shadow-none"
+                 id="date"  name="date" [(ngModel)]="date" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" class="form-control shadow-none"
+                 id="description" placeholder="Enter transaction description" name="description" [(ngModel)]="description" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" class="form-control shadow-none" id="amount" name="amount" [(ngModel)]="amount" placeholder="Enter amount" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <select id="type" required class="form-control shadow-none" name="type" [(ngModel)]="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <button type="submit" (click)="TransactionComplete()">Add Transaction</button>
+        </form>
+
+        <div class="transactions">
+            <h2>Transaction History</h2>
+            <ul id="transactionList" class="d-flex" *ngFor="let _trans of transaction">
+                <li class="d-flex" style="width: 100%; max-width: 600px;">
+                    <span class="flex-fill text-center">{{ _trans.desc }}</span>
+                    <span class="flex-fill text-center">{{ _trans.amount }}</span>
+                    <span class="flex-fill text-center">{{ _trans.type }}</span>
+                    <span class="flex-fill text-center">{{ _trans.date }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>

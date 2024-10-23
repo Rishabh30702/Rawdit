@@ -1,0 +1,38 @@
+<div class="container my-3">
+    <h1>Billing Dashboard</h1>
+    
+    <form id="transactionForm">
+        <div class="form-group">
+            <label for="date">Bill No:</label>
+            <input type="number" placeholder="Enter Bill Number" class="form-control shadow-none"
+             id="date"  name="bill_no" [(ngModel)]="bill_no" required>
+        </div>
+        <div class="form-group">
+            <label for="product_name">Item Name:</label>
+            <input type="text" class="form-control shadow-none"
+             id="description" placeholder="Enter Item Name" name="item_name" [(ngModel)]="item_name"  required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control shadow-none"
+             id="description" placeholder="Enter transaction description" name="description" [(ngModel)]="desc"  required>
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" class="form-control shadow-none" id="amount" name="amount" [(ngModel)]="amount" placeholder="Enter amount" required>
+        </div>
+        <button type="submit" (click)="SaveBill()">Add Bill</button>
+    </form>
+
+    <div class="transactions">
+        <h2>Billing History</h2>
+        <ul id="transactionList" class="d-flex" *ngFor="let _bill of bill">
+            <li class="d-flex" style="width: 100%; max-width: 600px;">
+                <span class="flex-fill text-center">{{ _bill.bill_no }}</span>
+                <span class="flex-fill text-center">{{ _bill.item_name}}</span>
+                <span class="flex-fill text-center">{{ _bill.desc}}</span>
+                <span class="flex-fill text-center">{{ _bill.amount}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

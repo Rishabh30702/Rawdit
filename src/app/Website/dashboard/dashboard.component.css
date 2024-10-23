@@ -1,0 +1,157 @@
+/* Custom Fonts */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar Styles */
+#wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    transition: all 0.3s;
+}
+
+#sidebar .components {
+    padding: 20px 0;
+}
+
+#sidebar .components li a {
+    padding: 10px 20px;
+    display: block;
+    color: #ddd;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+#sidebar .components li a:hover, #sidebar .components li.active a {
+    background-color: #495057;
+    color: #fff;
+    text-decoration: none;
+}
+
+#sidebar .sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Toggle Sidebar */
+#menu-toggle {
+    cursor: pointer;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding: 0;
+    transition: all 0.3s;
+}
+
+/* Summary Cards */
+.summary-card {
+    border: none;
+    border-radius: 15px;
+}
+
+.summary-card h3 {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Charts */
+.card-header {
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+.card-body {
+    background-color: #ffffff;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Table */
+.table th {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #sidebar {
+        min-width: 80px;
+        max-width: 80px;
+    }
+    #sidebar .sidebar-header h3, #sidebar .sidebar-footer p {
+        display: none;
+    }
+    #sidebar .components li a {
+        text-align: center;
+        padding: 10px 0;
+    }
+    #page-content-wrapper {
+        padding: 0;
+    }
+}
+
+/* Sidebar Toggle */
+#wrapper.toggled #sidebar {
+    margin-left: -250px;
+}
+
+@media (max-width: 768px) {
+    #wrapper.toggled #sidebar {
+        margin-left: -80px;
+    }
+}
+
+/* Summary Card Colors */
+.summary-card.bg-primary {
+    background-color: #4e73df !important;
+}
+
+.summary-card.bg-danger {
+    background-color: #e74a3b !important;
+}
+
+.summary-card.bg-success {
+    background-color: #1cc88a !important;
+}
+
+/* Additional Custom Styles (Optional) */
+.card-header {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.badge.bg-danger {
+    font-size: 0.75em;
+}
+h5{
+    color: black;
+}
+h3{
+    color: black;
+}
